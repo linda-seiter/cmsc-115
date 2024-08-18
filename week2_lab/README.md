@@ -88,7 +88,10 @@ Week#1 hours: 35 rate: $18.25 pay: $638.75
 Week#2 hours: 39 rate: $18.25 pay: $711.75
 ```
 
-A **variable** is a name associated with a memory location. A **variable declaration** specifies a data type such as `int` or `double`, along with the name.  Once a variable is declared, it can be assigned an initial value.  The declaration and initialization can be done in one statement or two as shown below. 
+- A **variable** is a name associated with a memory location. 
+- A **variable declaration** allocates memory to store a value.  
+
+Each variable declaration must specify a data type such as `int` or `double`, along with the variable name.  Once a variable is declared, it can be assigned an initial value.  The declaration and initialization can be done in one statement or two as shown below. 
 
 <table>
 <tr>
@@ -101,9 +104,9 @@ A **variable** is a name associated with a memory location. A **variable declara
 </tr>
 </table>
 
-A variable is declared and initialized only once within a method.  However, it can be updated and assigned a new value several times.
+A variable is declared only once within a block such as a method body.  However, it can be assigned a value several times.
  
-Let's use the Eclipse debugger to step through the program one line of code at a time. Debugging helps you visualize how variables are declared, initialized, and updated in memory.
+Let's use the Eclipse debugger to step through the program one line of code at a time. Debugging helps to visualize how variables are declared, initialized, and updated in memory.
 
 <table>
 
@@ -254,8 +257,7 @@ Close the debug tab and return to the project explorer.
 </tr>
 </table>
 
-Now that you've seen how variables are initialized and updated in memory,
-add statements to update  `hoursWorked` and `hourlyRate` and recalculate `pay` for week#3, then print the updated variable values:
+Now that you've seen how variables are initialized and updated in memory, add statements to update  `hoursWorked` and `hourlyRate` and recalculate `pay` for week#3, then print the updated variable values:
 
 ```text
 Week#1 hours: 35 rate: $18.25 pay: $638.75
@@ -282,7 +284,54 @@ Save and close any open files.
 NOTE: Aside from visualizing variables in memory, you can use the debugger to step through your code to find logic errors.  Debugging is **one of the most useful skills** you can develop as a software developer!
 
 
-## Task 2 - StudentInfo.java
+
+
+## Task 2 - PizzaShares.java
+
+Double click on `PizzaShares.java` in the Package Explorer to open the file in the editor. 
+
+```java
+
+```
+
+The program uses a `Scanner` to read user input and initialize the
+ `totalSlices` and `people` variables.  The `slicesPerPerson` variable stores the number of whole slices per person. 
+ 
+ 
+ 
+Run `PizzaShares`, entering the sample input displayed in bold:
+ 
+<table>
+<tr>
+<th>Sample Run</th>
+</tr>
+<tr>
+<td>Enter #slices and #people: <b>24 10</b><br>
+Each person gets 2 slices.</td>
+</tr>
+</table>
+
+Given 24 slices and 10 people, each person gets 2 slices.  How many slices are leftover?  
+
+1. Update the program to use Java's `%` operator to calculate and print the leftover slices as shown in the sample runs tomorrow. 
+2. Run `PizzaSharesTest.java` to confirm your solution passes the Junit tests.
+
+<table>
+<tr>
+<th>Sample Run#1</th><th>Sample Run#2</th>
+</tr>
+<tr>
+<td>Enter #slices and #people: <b>24 10</b><br>
+Each person gets 2 slices.<br>
+There are 4 slices remaining.</td>
+<td>Enter #slices and #people: <b>12 4</b><br>
+Each person gets 3 slices.<br>
+There are 0 slices remaining.</td>
+</tr>
+</table>
+
+
+## Task 3 - StudentInfo.java
 
 Double click on `StudentInfo.java` in the Package Explorer to open the file in the editor, then run the program to view the output. 
 
@@ -386,3 +435,5 @@ Let's fix the error.  Line 23 should assign `gpa` to 4.0 **without** redeclaring
 	- One test checks the expected output. The other test counts the number of times `gpa` is declared, which should be just once.
 
 Save and close any open files.  
+
+## Task 4 - BusRoute.java

@@ -23,7 +23,7 @@ public class StudentInfoTest {
     	String contents = TestUtility.getClassAsString("StudentInfo");
 		System.out.println(contents);
 		
-		Pattern pattern = Pattern.compile("double gpa");
+		Pattern pattern = Pattern.compile("double\\s+gpa");
 	    Matcher matcher = pattern.matcher(contents);
 	    int count = 0;
 	    while (matcher.find()) {
