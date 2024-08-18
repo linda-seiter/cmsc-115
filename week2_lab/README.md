@@ -10,6 +10,8 @@ table, th, td {
 # CMSC 115 Week 2 Lab
 
 
+
+
 ## Learning Objectives
 
 - Declare, initialize, and update variables.
@@ -27,6 +29,15 @@ TODO: Instructions on how to configure debugger to prevent stepping into java.* 
 
 - Eclipse/settings/Java/Debug/Step Filtering
 - Select all, Apply and close, restart eclipse.
+
+## Reset or Switch Perspectives
+
+In this lab you will learn how to use the Java debugger.  The Debug perspective provides a different layout than the Java perspective.
+
+While you are doing the lab tasks, keep in mind how to restore a perspective or switch perspective:
+
+- Restore a perspective to its original layout by *Window > Perspective > Reset Perspective*
+- Switch to the Java Perspective by *Window > Perspective > Open Perspective > Java*
 
 ## Task 1 - Paycheck.java
 

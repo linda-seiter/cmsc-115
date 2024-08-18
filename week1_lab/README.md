@@ -16,9 +16,11 @@ table, th, td {
 - Modify a Java class
 - Fix common syntax errors
 
+## Setup
+
+TODO: Instruction on starting Eclipse, opening workspace, opening README.md.  
 
 ## Task 1 - CourseWelcome.java
-
 
 The  Package Explorer displays a lab project for each week.
 
@@ -75,7 +77,29 @@ Let's practice running a Junit test:
 ![console output](images/run_test.png)
 2.  The test runs the `main` method in `CourseWelcome`, then compares the actual output to the expected output. The Junit window appears with a green bar to indicate the test was successful.  
 ![console output](images/test1_passed.png)
-3. You can close the Junit window after verifying the test passed.
+3. You can close the Junit view after verifying the test passed.
+
+<img src="images/close_junit.png" alt="close junit view" width=200>
+
+
+### Java Perspective
+
+An Eclipse perspective contains an arrangement of views and an editor area.  We will primarily work with two Eclipse perspectives:
+
+- **Java perspective**: For editing and running a Java class.
+- **Debug perspective**: For debugging a Java class.
+
+The **Java perspective** is the default perspective and displays the Package Explorer, Task List, Outline, and Problems view.
+
+If you accidentally close a view such as the Package Explorer, you can restore it from the main menu by selecting *Window > Perspective > Reset Perspective*:
+
+<img src="images/reset_perspective.png" alt="reset java perspective" width=300>
+
+Try closing the Package Explorer view, then get it back by restoring the Java perspective.
+
+NOTE: Occasionally you might find yourself in a different perspective such as Debug or Java Browsing (which is different than the Java perpective).  You can restore the layout to the Java perspective by selecting *Window > Perspective > Open Perspective > Java*. 
+
+<img src="images/open_java_perspective.png" alt="open java perspective" width=300>
 
 ## Task 2 - JavaFacts.java
 
