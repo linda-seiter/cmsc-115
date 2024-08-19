@@ -3,6 +3,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class BusRouteTest {
 
     @Test
@@ -19,6 +22,36 @@ public class BusRouteTest {
         		+ "Departing stop#4 with 9 passengers";
         String actual = TestUtility.getOutput("BusRoute", null);
         assertEquals(expected, actual);
+    }
+    
+    @Test
+    @DisplayName("BusRoute.main uses augmented division operator")
+    public void mainDivOpTest() {
+    	String contents = TestUtility.getClassAsString("BusRoute");
+		System.out.println(contents);
+		
+		Pattern pattern = Pattern.compile("passengers\\s+/=\\s+2");
+	    Matcher matcher = pattern.matcher(contents);
+	    int count = 0;
+	    while (matcher.find()) {
+	    	count++;
+	    }
+	    assertEquals(1, count);
+    }
+    
+    @Test
+    @DisplayName("BusRoute.main uses augmented multiplication operator")
+    public void mainMultOpTest() {
+    	String contents = TestUtility.getClassAsString("BusRoute");
+		System.out.println(contents);
+		
+		Pattern pattern = Pattern.compile("passengers\\s+\\*=\\s+3");
+	    Matcher matcher = pattern.matcher(contents);
+	    int count = 0;
+	    while (matcher.find()) {
+	    	count++;
+	    }
+	    assertEquals(1, count);
     }
 
 }

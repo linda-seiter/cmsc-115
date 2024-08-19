@@ -1,5 +1,5 @@
 /**
- * BusRoute class demonstrates augmented operators.
+ * BusRoute class demonstrates augmented assignment operators and increment operator.
  * @author First Last
  */
 public class BusRoute {
@@ -22,16 +22,8 @@ public class BusRoute {
 		System.out.println("Departing stop#" + busStop + " with " + passengers + " passengers");
 		
 		//TODO: next stop, half the passengers get off (use division assignment operator)
-		busStop++;
-		System.out.println("Half the passengers get off at stop#" + busStop);
-		passengers /= 2;
-		System.out.println("Departing stop#" + busStop + " with " + passengers + " passengers");
 		
 		//TODO: next stop, the number of passengers triples (use multiplication assignment operator)
-		busStop++;
-		System.out.println("The number of passengers triples at stop#" + busStop);
-		passengers *= 3;
-		System.out.println("Departing stop#" + busStop + " with " + passengers + " passengers");
 						
 	}
 

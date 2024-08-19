@@ -291,13 +291,40 @@ NOTE: Aside from visualizing variables in memory, you can use the debugger to st
 Double click on `PizzaShares.java` in the Package Explorer to open the file in the editor. 
 
 ```java
+import java.util.Scanner;
 
+/**
+ * PizzaShares class demonstrates user input, along with division and remainder operators 
+ * @author First Last
+ */
+public class PizzaShares {
+	
+	public static void main(String[] args) {
+		//Declare local variables
+		int people, totalSlices, slicesPerPerson, slicesRemaining;
+		
+		//Declare and initialize Scanner to read user input
+		Scanner input = new Scanner(System.in);    
+		
+		//Prompt for number of pizza slices and number of people
+		System.out.print("Enter #slices and #people: ");
+		totalSlices = input.nextInt();
+		people = input.nextInt();
+		
+		//Compute number of slices per person
+		slicesPerPerson = totalSlices / people;
+		
+		System.out.println("Each person gets " + slicesPerPerson + " slices.");
+		
+		//TODO: Compute and print number of slices remaining
+		
+	}
+
+}
 ```
 
 The program uses a `Scanner` to read user input and initialize the
  `totalSlices` and `people` variables.  The `slicesPerPerson` variable stores the number of whole slices per person. 
- 
- 
  
 Run `PizzaShares`, entering the sample input displayed in bold:
  
@@ -313,7 +340,23 @@ Each person gets 2 slices.</td>
 
 Given 24 slices and 10 people, each person gets 2 slices.  How many slices are leftover?  
 
-1. Update the program to use Java's `%` operator to calculate and print the leftover slices as shown in the sample runs tomorrow. 
+
+<table>
+<tr><td>Operator</td><td>Meaning</td><td>Expression</td><td>Value</td></tr>
+<tr><td>+</td><td>addition</td><td>5+3</td><td>8</td></tr>
+<tr><td>-</td><td>subtraction</td><td>8-2</td><td>6</td></tr>
+<tr><td>*</td><td>multiplication</td><td>4*5</td><td>20</td> </tr>
+<tr><td>/</td><td>division</td><td>17/3</td><td>5</td> </tr>
+<tr><td>%</td><td>remainder</td><td>17%3</td><td>2</td> </tr>
+</table>
+
+
+ </tr>
+</table>
+
+
+
+1. Update the program to use Java's modulo (remainder) operator to calculate and print the leftover slices as shown in the sample runs tomorrow. 
 2. Run `PizzaSharesTest.java` to confirm your solution passes the Junit tests.
 
 <table>
@@ -385,7 +428,7 @@ Age: 29 gpa: 3.8</td>
 </tr>
 </table>
 
-After updating `age` to 29, the code should update `gpa` to 4.0.  
+After updating `age` to 29, the code should update `gpa` to 4.0.    The line to reassign `gpa` to 4.0 is currently commented out. 
 
 <table>
 
@@ -438,4 +481,89 @@ Save and close any open files.
 
 ## Task 4 - BusRoute.java
 
+Java has increment and decrement operators:
+
+<table>
+<tr><td>Operator</td><td>Expression</td><td>Equivalent</td></tr>
+<tr><td>++</td><td>x++</td><td>x = x + 1</td></tr>
+<tr><td>--</td><td>x--</td><td>x = x - 1</td></tr>
+</table>
+
+Java also supports augmented assignment operators:
+
+<table>
+<tr><td>Operator</td><td>Expression</td><td>Equivalent</td></tr>
+<tr><td>+=</td><td>x += 5</td><td>x = x + 5</td></tr>
+<tr><td>-=</td><td>x -= 5</td><td>x = x - 5</td></tr>
+<tr><td>*=</td><td>x *= 5</td><td>x = x * 5</td> </tr>
+<tr><td>/=</td><td>x /= 5</td><td>x = x / 5</td> </tr>
+<tr><td>%=</td><td>x %/ 5</td><td>x = x % 5</td> </tr>
+</table>
+
+Double click on `BusRoute.java` in the Package Explorer to open the file in the editor, then run the program to view the output. 
+
+```java
+/**
+ * BusRoute class demonstrates augmented assignment operators and increment operator.
+ * @author First Last
+ */
+public class BusRoute {
+
+	public static void main(String[] args) {
+		int passengers = 0;
+		int busStop = 0;
+		System.out.println("Bus begins its route");
+		
+		//first stop, 8 people get on (addition assignment operator)
+		busStop++;
+		System.out.println("8 passengers get on at stop#" + busStop);
+		passengers += 8;
+		System.out.println("Departing stop#" + busStop + " with " + passengers + " passengers");
+	
+		//next stop, 2 get off (subtraction assignment operator)
+		busStop++;
+		System.out.println("2 passengers get off at stop#" + busStop);
+		passengers -= 2;
+		System.out.println("Departing stop#" + busStop + " with " + passengers + " passengers");
+		
+		//TODO: next stop, half the passengers get off (use division assignment operator)
+		
+		//TODO: next stop, the number of passengers triples (use multiplication assignment operator)
+						
+	}
+}
+```
+
+
+The program uses the increment operator `++` along with augmented assignment operators `+=` and `-=` to update `busStop` and `passengers`.
+
+<table>
+<tr>
+<th>Expected Output</th>
+<th>Actual Output</th>
+</tr>
+<tr>
+<td>Bus begins its route<br>
+8 passengers get on at stop#1<br>
+Departing stop#1 with 8 passengers<br>
+2 passengers get off at stop#2<br>
+Departing stop#2 with 6 passengers<br>
+Half the passengers get off at stop#3<br>
+Departing stop#3 with 3 passengers<br>
+The number of passengers triples at stop#4<br>
+Departing stop#4 with 9 passengers</td>
+<td>Bus begins its route<br>
+8 passengers get on at stop#1<br>
+Departing stop#1 with 8 passengers<br>
+2 passengers get off at stop#2<br>
+Departing stop#2 with 6 passengers<br>
+<br><br><br><br></td>
+</tr>
+</table>
+
+1. Update `BusRoute.java` to add two more bus stops.  Use the appropriate augmented assignment operators to adjust the passenger count.  
+	- Half the passengers get off at the 3rd stop.
+	- The number of passengers triples at the 4th stop.
+2. Run `BusRoute` to view the output.
+3. Run `BusRouteTest` to confirm your solution passes the Junit tests.  
 

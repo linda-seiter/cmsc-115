@@ -34,7 +34,7 @@ public class PizzaSharesTest {
     
     @Test
     @DisplayName("PizzaShares.main uses remainder operator")
-    public void mainDeclarationTest() {
+    public void modOperatorTest() {
     	String contents = TestUtility.getClassAsString("PizzaShares");
 		System.out.println(contents);
 		
