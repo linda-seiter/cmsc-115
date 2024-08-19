@@ -2,9 +2,10 @@ import java.util.Scanner;
 
 /**
  * Rounding class demonstrates numeric conversion and rounding.
- * (1) Round a number to nearest integer
- * (2) Truncate a number to 3 digits after the decimal point
- * (3) TODO: Round a number to 3 digits after the decimal point
+ * (1) Cast a double to an int
+ * (2) Round a double to nearest integer
+ * (3) Truncate a double to 3 digits after the decimal point
+ * (4) TODO: Round a double to 3 digits after the decimal point
  * @author First Last
  */
 
@@ -15,6 +16,9 @@ public class Rounding {
 
 		System.out.print("Enter number: " );
 		double num = input.nextDouble();
+		
+		System.out.println("Cast as int: " + (int)num);
+		System.out.println();
 
 		System.out.println("Round to nearest int");
 		System.out.println("Original: \t"  	+ num);                  

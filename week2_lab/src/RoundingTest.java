@@ -9,7 +9,10 @@ public class RoundingTest {
     @DisplayName("Rounding.main prints correct output for input: 1.9247")
     public void mainIOTest1() {
     	String input = "1.9247";
-        String expected = "Enter number: Round to nearest int\n"
+        String expected = "Enter number: "
+        		+ "Cast as int: 1\n"
+        		+ "\n"
+        		+ "Round to nearest int\n"
         		+ "Original: 	1.9247\n"
         		+ "Add 0.5:	2.4247\n"
         		+ "Cast as int:	2\n"
@@ -25,15 +28,17 @@ public class RoundingTest {
         		+ "Move . 3 digits right:	1924.7\n"
         		+ "Add 0.5:		1925.2\n"
         		+ "Cast as int		1925\n"
-        		+ "Move . 3 digits left:	1.925"
-        		+ "";
+        		+ "Move . 3 digits left:	1.925";
         String actual = TestUtility.getOutput("Rounding", input);
         assertEquals(expected, actual);
     }
     
     public void mainIOTest2() {
     	String input = "3.2984";
-    	String expected = "Enter number: Round to nearest int\n"
+    	String expected = "Enter number: "
+    			+ "Cast as int: 3\n"
+    			+ "\n"
+    			+ "Round to nearest int\n"
     			+ "Original: 	3.2984\n"
     			+ "Add 0.5:	3.7984\n"
     			+ "Cast as int:	3\n"

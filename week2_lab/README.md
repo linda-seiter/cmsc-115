@@ -257,7 +257,7 @@ Close the debug tab and return to the project explorer.
 </tr>
 </table>
 
-Now that you've seen how variables are initialized and updated in memory, add statements to update  `hoursWorked` and `hourlyRate` and recalculate `pay` for week#3, then print the updated variable values:
+Now that you've seen how variables are initialized and updated in memory, add statements to update `hoursWorked` and `hourlyRate` and recalculate `pay` for week#3, then print the updated variable values:
 
 ```text
 Week#1 hours: 35 rate: $18.25 pay: $638.75
@@ -269,7 +269,7 @@ Week#3 hours: 27 rate: $18.75 pay: $506.25
 1. Select `Paycheck.java` and click the green run button to execute the code and view the output. 
 2. Select `PaycheckTest.java` and click the green run button to run the Junit test and confirm your solution passes the test.  
 
-<img src = "images/failed_test_result_diff.png" alt="step over" width=150>
+<img src = "images/failed_test_result_diff.png" alt="step over" width=600>
 
 If the Junit test fails:
 
@@ -571,8 +571,8 @@ Departing stop#2 with 6 passengers<br>
 
 Double click on `DebugIt.java` in the Package Explorer to open the file in the editor, then run the program to view the output. 
 
-- Line 12 should increment `planesOnRunway` by 5.
-- Line 14 should decrement `planesOnRunway` by 3.
+- Line 12 should increase `planesOnRunway` by 5.
+- Line 14 should decrease `planesOnRunway` by 3.
 
 
 ```java
@@ -586,9 +586,9 @@ public class DebugIt {
 	public static void main(String[] args) {
 		int planesOnRunway = 2;
 		
-		//5 planes land on runway, increment by 5
+		//5 planes land on runway, increase planesOnRunway by 5
 		planesOnRunway =+ 5;   //expected value: 7
-		//3 planes take off, decrement by 3
+		//3 planes take off, decrease planesOnRunway by 3
 		planesOnRunway =- 3;   //expected value: 4
 		
 		System.out.println("Planes on runway = " + planesOnRunway);
@@ -683,7 +683,7 @@ Variables View
 <img src = "images/debugit_line12.png" alt="line 12 variable state" width=200>
 <br>
 <br>
-Error! The variable should be<br> incremented by 5, resulting in the value 7<br>(2 + 5 = 7).
+Error! The variable should be increased by 5, resulting in the value 7, but it is erroneously assigned to 5.
 </td>
 </tr>
 
@@ -696,8 +696,37 @@ Error! The variable should be<br> incremented by 5, resulting in the value 7<br>
 <img src = "images/debugit_line14.png" alt="line 14 variable state" width=200>
 <br>
 <br>
-Error! The variable should be<br> decremented by 3, resulting in the value 4.<br>
-(7 - 3 = 4)
+Error! The variable should be decreased by 3, resulting in the value 4, but it is erroneously assigned to -3.
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/step_over_icon.png" alt="step over icon" width=50></td>
+<td>
+<code>System.out.println("Planes on runway = " + planesOnRunway);</code></td>
+<td>
+<img src = "images/debugit_line16.png" alt="line 16 printing variable values" width=200>
+<br>
+The actual output does not match the expected output.
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/resume_or_terminate.png" alt="step over" width=150>
+</td>
+<td colspan="2">
+We've reached the end of the main method.  Press the red square to terminate the debug session.
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/close_debug.png" alt="step over" width=150>
+</td>
+<td colspan="2">
+Close the debug tab and return to the project explorer.
 </td>
 </tr>
 
@@ -710,7 +739,7 @@ This example demonstrates a common error with augmented assignment operators.
 
 <tr>
 <th>
-Current Code
+Current Incorrect Code
 </th>
 <th>
 Equivalent Code
@@ -723,7 +752,7 @@ Equivalent Code
 </td>
 <td>
 <code>planesOnRunway = +5;</code>
-<br><br>Assign to positive 5<br> instead of incrementing by 5.
+<br><br>Assign to positive 5.
 </td>
 </tr>
 
@@ -733,9 +762,11 @@ Equivalent Code
 </td>
 <td>
 <code>planesOnRunway = -3;</code>
-<br><br>Assign to negative 3<br> instead of decrementing by 5.
+<br><br>Assign to negative 3.
 </td>
 </tr>
+
+
 
 </table>
 
@@ -743,54 +774,70 @@ Equivalent Code
 Augmented assignment operators requires the math operator to come **before** the equal sign, not after it!
 
 <table>
-<tr>
-<td>
-+=
-</td>
-<td>
-Addition Assignment
-</td>
-</tr>
-
-<tr>
-<td>
--=
-</td>
-<td>
-Subtraction Assignment
-</td>
-</tr>
-
-<tr>
-<td>
-*=
-</td>
-<td>
-Multiplication Assignment
-</td>
-</tr>
-
-<tr>
-<td>
-/=
-</td>
-<td>
-Division Assignment
-</td>
-</tr>
-
-<tr>
-<td>
-%=
-</td>
-<td>
-Modulo Assignment
-</td>
-</tr>
-
+<tr><td>Operator</td><td>Expression</td><td>Equivalent</td></tr>
+<tr><td>+=</td><td>x += 5</td><td>x = x + 5</td></tr>
+<tr><td>-=</td><td>x -= 5</td><td>x = x - 5</td></tr>
+<tr><td>*=</td><td>x *= 5</td><td>x = x * 5</td> </tr>
+<tr><td>/=</td><td>x /= 5</td><td>x = x / 5</td> </tr>
+<tr><td>%=</td><td>x %/ 5</td><td>x = x % 5</td> </tr>
 </table>
+
 
 1. Fix `DebugIt.java` to use the correct augmented assignment operators to update `planesOnRunway`.
 2. Run `DebugIt` to confirm the expected output.
 3. Run `DebugItTest` to confirm the Junit tests pass.
 
+Try to remember this error and how to fix it, it is a very common mistake!
+
+
+## Task 6 - Rounding.java
+
+Double click on `Rounding.java` in the Package Explorer to open the file in the editor. 
+
+```java
+
+```
+
+Run the program, passing the bold value as input:
+
+<table>
+<tr>
+<th>Sample Run#1</th>
+<th>Sample Run#2</th>
+</tr>
+<tr>
+<td>Enter number: <b>1.9247</b><br>
+Cast as int: 1<br>
+<br>
+Round to nearest int<br>
+Original: 	1.9247<br>
+Add 0.5:	2.4247<br>
+Cast as int:	2<br>
+<br>
+Truncate to 3 digits after the decimal point<br>
+Original:		1.9247<br>
+Move . 3 digits right:	1924.7<br>
+Cast as int		1924<br>
+Move . 3 digits left:	1.924<br>
+<br>
+TODO: Round to 3 digits after the decimal point
+</td>
+<td>Enter number: <b>3.2984</b><br>
+Cast as int: 3<br>
+<br>
+Round to nearest int<br>
+Original: 	3.2984<br>
+Add 0.5:	3.7984<br>
+Cast as int:	3<br>
+<br>
+Truncate to 3 digits after the decimal point<br>
+Original:		3.2984<br>
+Move . 3 digits right:	3298.4<br>
+Cast as int		3298<br>
+Move . 3 digits left:	3.298<br>
+
+TODO: Round to 3 digits after the decimal point
+</tr>
+</table>
+
+- 
