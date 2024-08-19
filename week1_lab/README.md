@@ -20,7 +20,6 @@ table, th, td {
 - Apply rules of operator precedence
 - Fix common syntax errors
 - Create a new Java class
-- Create a new Junit class
 
 ## Setup
 
@@ -137,7 +136,7 @@ Assume `JavaFacts` should produce the expected output displayed below.
 </tr>
 </table>
 
-1. Click on `JavaFacts.java`, then click the run button to view the output.  Notice the program does not produce the expected output.
+1. Click on `JavaFacts.java`, then click the run button to view the output.  Notice the actual output produced by the program does not match the expected output.
 2. Click on the Junit class `JavaFactsTest.java`, then click the run button to run the test.  The red bar indicates the test failed.
 
 ![task 2 test fails](images/test2_failed.png)

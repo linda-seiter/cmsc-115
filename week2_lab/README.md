@@ -121,7 +121,7 @@ Set a breakpoint at line 9 by double clicking in the gutter to the left of the l
 
 <tr>
 <td>
-<img src = "images/debug_button.png" alt="debug button on menubar" width=300>
+<img src = "images/debug_button.png" alt="debug button on menubar" width=200>
 </td>
 <td>
 Click the debug button on the menubar. Confirm switching to the debug perspective if prompted.
@@ -566,4 +566,231 @@ Departing stop#2 with 6 passengers<br>
 	- The number of passengers triples at the 4th stop.
 2. Run `BusRoute` to view the output.
 3. Run `BusRouteTest` to confirm your solution passes the Junit tests.  
+
+## Task 5 - DebugIt.java
+
+Double click on `DebugIt.java` in the Package Explorer to open the file in the editor, then run the program to view the output. 
+
+- Line 12 should increment `planesOnRunway` by 5.
+- Line 14 should decrement `planesOnRunway` by 3.
+
+
+```java
+/**
+ * DebugIt class demonstrates common operator errors.
+ * @author First Last
+ */
+public class DebugIt {
+
+	//TODO: Fix the operator errors
+	public static void main(String[] args) {
+		int planesOnRunway = 2;
+		
+		//5 planes land on runway, increment by 5
+		planesOnRunway =+ 5;   //expected value: 7
+		//3 planes take off, decrement by 3
+		planesOnRunway =- 3;   //expected value: 4
+		
+		System.out.println("Planes on runway = " + planesOnRunway);
+	}
+
+}
+```
+
+The program has a subtle but common error that prevents it from producing the expected output:
+
+
+<table>
+<tr>
+<th>Expected Output</th>
+<th>Actual Output</th>
+</tr>
+<tr>
+<td>Planes on runway = 4</td>
+<td>Planes on runway = -3</td>
+</tr>
+</table>
+
+
+Let's use the debugger to execute each line and view the variables in memory.
+
+<table>
+
+<tr>
+<td>
+<img src = "images/breakpoint_debugit.png" alt="double click on line 9 gutter to set breakpoint" width=300>
+</td>
+<td>
+Set a breakpoint at line 9 by double clicking in the gutter to the left of the line number. 
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/debug_button.png" alt="debug button on menubar" width=200>
+</td>
+<td>
+Click the debug button on the menubar. Confirm switching to the debug perspective if prompted.
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/debugit_breakpoint_line9.png" alt="debug perspective" width=400>
+</td>
+<td>
+Eclipse switches to the debug perspective. The main method is called and stops execution at the breakpoint. 
+</td>
+</tr>
+</table>
+
+
+We'll find the bug using the "step over" button to execute one line of code at a time and view the variable in memory.
+
+<table>
+
+<tr>
+<th>
+Step Over
+</th>
+<th>
+Current line
+</th>
+<th>
+Variables View
+</th>
+</tr>
+
+
+<tr>
+<td>
+<img src = "images/step_over_icon.png" alt="step over and other debug icons" width=50>
+</td>
+<td>
+<code>int planesOnRunway = 2;</code>
+</td>
+<td>
+<img src = "images/debugit_line9.png" alt="line 9 variable state" width=200>
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/step_over_icon.png" alt="step over icon" width=50></td>
+<td>
+<code>planesOnRunway =+ 5;</code></td>
+<td>
+<img src = "images/debugit_line12.png" alt="line 12 variable state" width=200>
+<br>
+<br>
+Error! The variable should be<br> incremented by 5, resulting in the value 7<br>(2 + 5 = 7).
+</td>
+</tr>
+
+<tr>
+<td>
+<img src = "images/step_over_icon.png" alt="step over icon" width=50></td>
+<td>
+<code>planesOnRunway =- 3;</code></td>
+<td>
+<img src = "images/debugit_line14.png" alt="line 14 variable state" width=200>
+<br>
+<br>
+Error! The variable should be<br> decremented by 3, resulting in the value 4.<br>
+(7 - 3 = 4)
+</td>
+</tr>
+
+</table>
+
+This example demonstrates a common error with augmented assignment operators.
+
+
+<table>
+
+<tr>
+<th>
+Current Code
+</th>
+<th>
+Equivalent Code
+</th>
+</tr>
+
+<tr>
+<td>
+<code>planesOnRunway =+ 5;</code>
+</td>
+<td>
+<code>planesOnRunway = +5;</code>
+<br><br>Assign to positive 5<br> instead of incrementing by 5.
+</td>
+</tr>
+
+<tr>
+<td>
+<code>planesOnRunway =- 3;</code>
+</td>
+<td>
+<code>planesOnRunway = -3;</code>
+<br><br>Assign to negative 3<br> instead of decrementing by 5.
+</td>
+</tr>
+
+</table>
+
+
+Augmented assignment operators requires the math operator to come **before** the equal sign, not after it!
+
+<table>
+<tr>
+<td>
++=
+</td>
+<td>
+Addition Assignment
+</td>
+</tr>
+
+<tr>
+<td>
+-=
+</td>
+<td>
+Subtraction Assignment
+</td>
+</tr>
+
+<tr>
+<td>
+*=
+</td>
+<td>
+Multiplication Assignment
+</td>
+</tr>
+
+<tr>
+<td>
+/=
+</td>
+<td>
+Division Assignment
+</td>
+</tr>
+
+<tr>
+<td>
+%=
+</td>
+<td>
+Modulo Assignment
+</td>
+</tr>
+
+</table>
+
+1. Fix `DebugIt.java` to use the correct augmented assignment operators to update `planesOnRunway`.
+2. Run `DebugIt` to confirm the expected output.
+3. Run `DebugItTest` to confirm the Junit tests pass.
 

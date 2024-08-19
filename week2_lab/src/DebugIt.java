@@ -1,5 +1,5 @@
 /**
- * DebugIt class demonstrates common errors with augmented operators.
+ * DebugIt class demonstrates common operator errors.
  * @author First Last
  */
 public class DebugIt {
@@ -7,16 +7,13 @@ public class DebugIt {
 	//TODO: Fix the operator errors
 	public static void main(String[] args) {
 		int planesOnRunway = 2;
-		int shipsInPort = 10;
 		
-		//5 planes land on runway
-		planesOnRunway =+ 5;   //expected result: 7
-		
-		//4 ships leave port
-		shipsInPort =- 4;   //expected result: 6 
+		//5 planes land on runway, increment by 5
+		planesOnRunway =+ 5;   //expected value: 7
+		//3 planes take off, decrement by 3
+		planesOnRunway =- 3;   //expected value: 4
 		
 		System.out.println("Planes on runway = " + planesOnRunway);
-		System.out.println("Ships in port = " + shipsInPort);
 	}
 
 }
