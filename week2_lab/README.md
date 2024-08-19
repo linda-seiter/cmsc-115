@@ -795,7 +795,47 @@ Try to remember this error and how to fix it, it is a very common mistake!
 Double click on `Rounding.java` in the Package Explorer to open the file in the editor. 
 
 ```java
+import java.util.Scanner;
 
+/**
+ * Rounding class demonstrates numeric conversion and rounding.
+ * (1) Cast a double to an int
+ * (2) Round a double to nearest integer
+ * (3) Truncate a double to 3 digits after the decimal point
+ * (4) TODO: Round a double to 3 digits after the decimal point
+ * @author First Last
+ */
+
+public class Rounding {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+
+		System.out.print("Enter number: " );
+		double num = input.nextDouble();
+		
+		System.out.println("Cast as int: " + (int)num);
+		System.out.println();
+
+		System.out.println("Round to nearest int");
+		System.out.println("Original: \t"  	+ num);                  
+		System.out.println("Add 0.5:\t" 	+ (num + 0.5));           
+		System.out.println("Cast as int:\t" + (int) (num + 0.5));   
+		System.out.println();
+
+		System.out.println("Truncate to 3 digits after the decimal point");
+		System.out.println("Original:\t\t"      		+ num);                         
+		System.out.println("Move . 3 digits right:\t" 	+ num * 1000 );          
+		System.out.println("Cast as int\t\t"        	+ (int) (num * 1000));        
+		System.out.println("Move . 3 digits left:\t"  	+ (int) (num * 1000 ) / 1000.0); 
+		System.out.println();
+
+		//TODO
+		System.out.println("Round to 3 digits after the decimal point");
+		
+	}
+
+}
 ```
 
 Run the program, passing the bold value as input:
@@ -820,7 +860,7 @@ Move . 3 digits right:	1924.7<br>
 Cast as int		1924<br>
 Move . 3 digits left:	1.924<br>
 <br>
-TODO: Round to 3 digits after the decimal point
+Round to 3 digits after the decimal point
 </td>
 <td>Enter number: <b>3.2984</b><br>
 Cast as int: 3<br>
@@ -836,8 +876,184 @@ Move . 3 digits right:	3298.4<br>
 Cast as int		3298<br>
 Move . 3 digits left:	3.298<br>
 
-TODO: Round to 3 digits after the decimal point
+Round to 3 digits after the decimal point
 </tr>
 </table>
 
-- 
+
+Casting converts a value in one data type to another:  
+
+<table>
+
+<tr>
+<th>
+Expression
+</th>
+<th>
+Value
+</th>
+</tr>
+
+<tr>
+<td>
+(int)5.274
+</td>
+<td>
+5
+</td>
+</tr>
+
+<tr>
+<td>
+(double)3
+</td>
+<td>
+3.0
+</td>
+</tr>
+
+</table>
+
+We can round a double to the nearest integer by adding 0.5 and then casting the result as an int.  If the fractional part is less than 0.5, the number rounds down otherwise it rounds up:
+
+<table>
+
+<tr>
+<th>
+Expression
+</th>
+<th>
+Value
+</th>
+</tr>
+
+<tr>
+<td>
+(int)(7.3 + 0.5)
+</td>
+<td>
+7
+</td>
+</tr>
+
+<tr>
+<td>
+(int)(7.6 + 0.5)
+</td>
+<td>
+8
+</td>
+</tr>
+
+</table>
+
+We can truncate a number to N digits after the decimal point using the following expression
+
+
+
+
+<table>
+
+<tr>
+<th>
+Expression
+</th>
+<th>
+Truncate digits
+</th>
+</tr>
+
+<tr>
+<td>
+(int) (num * 10 ) / 10.0);
+</td>
+<td>
+1 digit after decimal point
+</td>
+</tr>
+
+<tr>
+<td>
+(int) (num * 100 ) / 100.0);
+</td>
+<td>
+2 digits after decimal point
+</td>
+</tr>
+
+<tr>
+<td>
+(int) (num * 1000 ) / 1000.0);
+</td>
+<td>
+3 digits after decimal point
+</td>
+</tr>
+
+</table>
+
+The `Rounding` class shows how to:
+1. cast a double as an int
+2. round a double to the nearest integer
+3. truncate a double to 3 digits after the decimal point.   
+
+Your task is to update the `main` method with statements to round the input value to 3 digits after the decimal point.
+
+1. Update `Rounding.java` to round the number to 3 digits after the decimal point, producing the expected output displayed in the sample runs.
+2. Run `Rounding` to confirm the output.
+3. Run `RoundingTest` to confirm your solution passes the Junit tests.
+
+<table>
+<tr>
+<th>Sample Run#1</th>
+<th>Sample Run#2</th>
+</tr>
+<tr>
+<td>Enter number: <b>1.9247</b><br>
+Cast as int: 1<br>
+<br>
+Round to nearest int<br>
+Original: 	1.9247<br>
+Add 0.5:	2.4247<br>
+Cast as int:	2<br>
+<br>
+Truncate to 3 digits after the decimal point<br>
+Original:		1.9247<br>
+Move . 3 digits right:	1924.7<br>
+Cast as int		1924<br>
+Move . 3 digits left:	1.924<br>
+<br>
+Round to 3 digits after the decimal point<br>
+Original:		1.9247<br>
+Move . 3 digits right:	1924.7<br>
+Add 0.5:		1925.2<br>
+Cast as int		1925<br>
+Move . 3 digits left:	1.925<br>
+</td>
+
+
+<td>Enter number: <b>3.2984</b><br>
+Cast as int: 3<br>
+<br>
+Round to nearest int<br>
+Original: 	3.2984<br>
+Add 0.5:	3.7984<br>
+Cast as int:	3<br>
+<br>
+Truncate to 3 digits after the decimal point<br>
+Original:		3.2984<br>
+Move . 3 digits right:	3298.4<br>
+Cast as int		3298<br>
+Move . 3 digits left:	3.298<br>
+<br>
+Round to 3 digits after the decimal point<br>
+Original:		3.2984<br>
+Move . 3 digits right:	3298.4<br>
+Add 0.5:		3298.9<br>
+Cast as int		3298<br>
+Move . 3 digits left:	3.298<br>
+</tr>
+</table>
+
+Save and close any open files.
+
