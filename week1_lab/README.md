@@ -11,10 +11,16 @@ table, th, td {
 
 ## Learning Objectives
 
+- Explore the Eclipse Java Perspective
 - Run a Java application 
 - Run a Junit test 
 - Modify a Java class
+- Use comments to document code
+- Comment out code to prevent execution
+- Apply rules of operator precedence
 - Fix common syntax errors
+- Create a new Java class
+- Create a new Junit class
 
 ## Setup
 
@@ -310,8 +316,8 @@ Double click on `MathematicalExpression.java` in the Package Explorer to open th
 public class MathematicalExpression {
 	
 	public static void main(String[] args) {
-		System.out.print("5 + 7 = ");   //5 + 7 =
-		System.out.println(5 + 7);      //12
+		System.out.print("2 + 3 * 8 = "); 
+		System.out.println(2 + 3 * 8);
 	}
 
 }
@@ -320,7 +326,7 @@ public class MathematicalExpression {
 Run the program and confirm the output as shown below:
 
 ```text
-5 + 7 = 12
+2 + 3 * 8 = 26
 ```
 
 
@@ -331,10 +337,10 @@ A `String` is a sequence of characters surrounded by double quotes.  An unquoted
 <td>Expression</td><td>Value</td>
 </tr>
 <tr>
-<td>"5 + 7 = "</td><td>"5 + 7 = "</td>
+<td>"2 + 3 * 8 = "</td><td>"2 + 3 * 8 = "</td>
 </tr>
 <tr>
-<td>5 + 7</td><td>12</td>
+<td>2 + 3 * 8</td><td>26</td>
 </tr>
 </table>
 
@@ -351,31 +357,60 @@ A `String` is a sequence of characters surrounded by double quotes.  An unquoted
 </tr>
 </table>
 
-1. Adjust the 2 print statements to produce the expected output, adding parenthesis to both the string and the mathematical expression.  
+1. Adjust the 2 print statements to produce the expected output, adding parenthesis to both the string and the mathematical expression to force `+` to be performed before `*`.
 2. Run `MathematicalExpression` to view the output.
 3. Run `MathematicalExpressionTest` to confirm your solution passes the Junit test.  
+
 
 Save and close any open files.
  
 
 ## Task 7 - SelfIntroduction.java
 
-Double click on `SelfIntroduction.java` in the Package Explorer to open the file in the editor.   
+In this task, you will create a new Java class named `SelfIntroduction`
+and add print statements to the `main` method to introduce yourself.
+
+NOTE: The Junit test class `SelfIntroductionTest` already exists for testing your new class `SelfIntroduction`.
+
+In the Project Explorer, right-click on `week1_lab>src>(default package)` and then select `New > Class` from the popup menu. 
+
+<img src="images/new_class.png" alt="create new class" width=400>
+
+Confirm the source folder and package are as shown in the form below (press Cancel if there is an error). Enter the class name `SelfIntroduction` and check the box to generate a `main` method.   Press "Finish" to create the class.
+
+<img src="images/new_class_form.png" alt="new class form" width=400>
+
+You should see `SelfIntroduction.java` in the Package Explorer.  The code editor view will contain the new Java class with a `main` method.  
+
+<img src="images/new_class_editor.png" alt="new class in editor view" width=400>
+
+1. Edit the code as shown below to add the sample block comment before the class header (replace First and Last with your name).  This is a JavaDoc comment, which is used to generate documentation in HTML format from Java source code.  We'll learn more about JavaDoc in a later lesson.
+2. Edit the `main` method to add print statements to introduce yourself. The program should produce at least 4 lines of output.
+3. Run `SelfIntroductionTest` to confirm your solution passes the Junit test. The test is designed to count the number of lines of output.
+
 
 ```java
-
+/**
+ * SelfIntroduction class demonstrates at least 4 print statements.
+ * @author First Last
+ */
 public class SelfIntroduction {
 
 	public static void main(String[] args) {
-		// TODO: Introduce yourself with at least 4 lines of output.
 		System.out.println("My name is ...");
 	}
 
 }
 ```
 
-1. Edit the `main` method to add print statements to introduce yourself. The program should produce at least 4 lines of output.
-2. Run `SelfIntroductionTest` to confirm your solution passes the Junit test. The test is designed to count the number of lines of output.
+NOTE: The Junit test will fail if you did not name your class "SelfIntroduction", spelling and case matter in Java.  You can't just change the class name in the code editor, you also need to change the file name to match exactly in the Project Explorer.
+
+If you need to rename a class:
+
+1. Right-click on the class file in the Package Explorer.
+2. Select "Refactor > Rename".
+3. Type in the new class name and press Finish.
+
 
 Save and close any open files.
 
