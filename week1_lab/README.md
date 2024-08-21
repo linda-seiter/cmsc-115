@@ -419,4 +419,5 @@ If there are any open files in the editor window, right-click on one of the tabs
 
 ![close all and save](images/close_all.png)
 
-.....TBD.....
+TODO: Instructions on submitting
+
