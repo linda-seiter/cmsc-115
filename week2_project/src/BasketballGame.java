@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * BasketballGame class demonstrates augmented assignment, 
  * increment and decrement operators
- * 
+ * @author First Last
  */
 public class BasketballGame {
 
