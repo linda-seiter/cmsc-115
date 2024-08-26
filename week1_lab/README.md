@@ -63,9 +63,9 @@ When the `main` method executes, the two print statements produce the following 
 Let's execute the program and view the output.  
 
 1. Click `CourseWelcome.java` in the Package Explorer to select the file.
-2. Click the green triangular run button on the workbench toolbar. 
+2. Click the green triangular run button on the workbench toolbar, or select *Run > Run As > Java Application* from the menubar. 
 ![click run button on workbench toolbar](images/run_java.png)
-3. View the program output in the console window.
+3. The program output is displayed in the console window.
 ![console output](images/console.png)
 
 
@@ -78,9 +78,9 @@ Don't worry about understanding the code in `CourseWelcomeTest`.  We'll learn ho
 
 Let's practice running a Junit test:
 
-1. Click on `CourseWelcomeTest.java`, then click on the green run button.
+1. Click on `CourseWelcomeTest.java`, then click the run button.
 ![console output](images/run_test.png)
-2.  The test runs the `main` method in `CourseWelcome`, then compares the actual output to the expected output. The Junit window appears with a green bar to indicate the test was successful.  
+2.  The test runs the `main` method in `CourseWelcome`, then compares the actual output to the expected output. The Junit window appears with a green bar to indicate the test was successful. The Junit window also indicates 1 test ran with 0 errors and 0 failures. 
 ![console output](images/test1_passed.png)
 3. You can close the Junit view after verifying the test passed.
 
@@ -122,7 +122,7 @@ public class JavaFacts {
 }
 ```
 
-Assume `JavaFacts` should produce the expected output displayed below.  
+`JavaFacts` should produce the expected output displayed below.  However, the actual output produced by the current code differs from the expected output.
 
 
 <table>
@@ -136,8 +136,8 @@ Assume `JavaFacts` should produce the expected output displayed below.
 </tr>
 </table>
 
-1. Click on `JavaFacts.java`, then click the run button to view the output.  Notice the actual output produced by the program does not match the expected output.
-2. Click on the Junit class `JavaFactsTest.java`, then click the run button to run the test.  The red bar indicates the test failed.
+1. Click on `JavaFacts.java`, then click the run button to view the output.  Notice the actual output does not match the expected output.
+2. Click on the Junit class `JavaFactsTest.java`, then click the run button to run the test.  The red bar indicates a test failed. Junit also displays the failure count to indicate the number of test methods that failed. 
 
 ![task 2 test fails](images/test2_failed.png)
 
@@ -145,18 +145,16 @@ Junit provides a popup window to compare the actual and expected test results:
 
 1. Expand and click on the failed test.
 2. Click the "Compare Actual With Expected Test Result" icon.
-3. View the difference in the popup window.
+3. The difference is displayed in the popup window.
 ![task 2 compare results](images/test2_result_comparison.png)
  
 Let's fix `JavaFacts` to produce the expected output. 
 
-1. Edit the second  statement in the `main` method to print the character string "Java is an object-oriented language".  
+1. Edit the second  statement in the `main` method to print the character string "Java is an object-oriented language".  Save your changes by selecting `File > Save` from the menu bar, or type `Ctrl-S` (Windows/Linux) or `Command-S` (Mac).
 2. Run `JavaFacts` and view the output in the console.
 3. Run `JavaFactsTest` and confirm your solution passes the test.
 
-Save your changes to `JavaFacts.java` by selecting `File > Save` from the menu bar, or type `Ctrl-S` (Windows/Linux) or `Command-S` (Mac).
-
-After saving, close the file by clicking the `X` on the editor window tab.
+Close any open files by clicking the `X` on the editor window tab.  
 
 ![close file in editor window](images/close.png) 
 
@@ -402,12 +400,12 @@ public class SelfIntroduction {
 }
 ```
 
-NOTE: The Junit test will fail if you did not name your class "SelfIntroduction", spelling and case matter in Java.  You can't just change the class name in the code editor, you also need to change the file name to match exactly in the Project Explorer.
+NOTE: The Junit test will fail if you did not name your class "SelfIntroduction". Spelling and case matter in Java.  You can't just change the class name in the code editor, you also need to change the file name to match exactly in the Project Explorer.
 
 If you need to rename a class:
 
 1. Right-click on the class file in the Package Explorer.
-2. Select "Refactor > Rename".
+2. Select *Refactor > Rename*.
 3. Type in the new class name and press Finish.
 
 
@@ -415,7 +413,7 @@ Save and close any open files.
 
 ## Submit Your Solution
 
-If there are any open files in the editor window, right-click on one of the tabs and select "Close All". You will be prompted if there are any unsaved changes. **Save your changes before submitting.**
+If there are any open files in the editor window, right-click on one of the tabs and select "Close All". You will be prompted if there are unsaved changes. **Save your changes before submitting.**
 
 ![close all and save](images/close_all.png)
 
