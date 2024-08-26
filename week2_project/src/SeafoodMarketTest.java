@@ -11,7 +11,7 @@ public class SeafoodMarketTest {
     	String input = "5 8.99";
         String expected = "Enter pounds of fish and price per pound: "
         		+ "5.0 lbs at $8.99 per lb = $44.95";
-        String actual = TestUtility.getOutput("SeafoodMarket", input);
+        String actual = JunitHelper.mainInputOutput("SeafoodMarket", input);
         assertEquals(expected, actual);
     }
     
@@ -21,7 +21,7 @@ public class SeafoodMarketTest {
     	String input = "3.25 15.99";
         String expected = "Enter pounds of fish and price per pound: "
         		+ "3.25 lbs at $15.99 per lb = $51.97";
-        String actual = TestUtility.getOutput("SeafoodMarket", input);
+        String actual = JunitHelper.mainInputOutput("SeafoodMarket", input);
         assertEquals(expected, actual);
     }
 

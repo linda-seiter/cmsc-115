@@ -8,10 +8,10 @@ public class JavaFactsTest {
     @Test
     @DisplayName("JavaFacts.main prints correct output")
     public void mainIOTest() {
-        String expected = "Java was initially named Oak.\n"
+    	String expectedOutput = "Java was initially named Oak.\n"
         		+ "Java is an object-oriented language.";
-        String actual = TestUtility.getOutput("JavaFacts", null);
-        assertEquals(expected, actual);
+        String actualOutput = JunitHelper.mainOutput("JavaFacts");
+        assertEquals(expectedOutput, actualOutput);
     }
 
 }

@@ -8,11 +8,11 @@ public class FixitTest {
     @Test
     @DisplayName("Fixit.main prints correct output")
     public void mainIOTest() {
-        String expected = "ship\n"
+        String expectedOutput = "ship\n"
         		+ "airplane\n"
         		+ "tank";
-        String actual = TestUtility.getOutput("Fixit", null);
-        assertEquals(expected, actual);
+        String actualOutput = JunitHelper.mainOutput("Fixit");
+        assertEquals(expectedOutput, actualOutput);
     }
 
 }

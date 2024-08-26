@@ -9,7 +9,7 @@ public class RoundingTest {
     @DisplayName("Rounding.main prints correct output for input: 1.9247")
     public void mainIOTest1() {
     	String input = "1.9247";
-        String expected = "Enter number: "
+        String expectedOutput = "Enter number: "
         		+ "Cast as int: 1\n"
         		+ "\n"
         		+ "Round to nearest int\n"
@@ -29,13 +29,13 @@ public class RoundingTest {
         		+ "Add 0.5:		1925.2\n"
         		+ "Cast as int		1925\n"
         		+ "Move . 3 digits left:	1.925";
-        String actual = TestUtility.getOutput("Rounding", input);
-        assertEquals(expected, actual);
+        String actualOutput = JunitHelper.mainInputOutput("Rounding", input);
+        assertEquals(expectedOutput, actualOutput);
     }
     
     public void mainIOTest2() {
     	String input = "3.2984";
-    	String expected = "Enter number: "
+    	String expectedOutput = "Enter number: "
     			+ "Cast as int: 3\n"
     			+ "\n"
     			+ "Round to nearest int\n"
@@ -55,8 +55,8 @@ public class RoundingTest {
     			+ "Add 0.5:		3298.9\n"
     			+ "Cast as int		3298\n"
     			+ "Move . 3 digits left:	3.298";
-    	String actual = TestUtility.getOutput("Rounding", input);
-        assertEquals(expected, actual);
+    	String actualOutput = JunitHelper.mainInputOutput("Rounding", input);
+        assertEquals(expectedOutput, actualOutput);
     }
    
 

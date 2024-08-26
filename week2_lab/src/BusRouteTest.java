@@ -3,15 +3,12 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class BusRouteTest {
 
     @Test
     @DisplayName("BusRoute.main prints correct output")
     public void mainIOTest() {
-        String expected = "Bus begins its route\n"
+    	String expectedOutput = "Bus begins its route\n"
         		+ "8 passengers get on at stop#1\n"
         		+ "Departing stop#1 with 8 passengers\n"
         		+ "2 passengers get off at stop#2\n"
@@ -20,39 +17,27 @@ public class BusRouteTest {
         		+ "Departing stop#3 with 3 passengers\n"
         		+ "The number of passengers triples at stop#4\n"
         		+ "Departing stop#4 with 9 passengers";
-        String actual = TestUtility.getOutput("BusRoute", null);
-        assertEquals(expected, actual);
+        String actualOutput = JunitHelper.mainOutput("BusRoute");
+        assertEquals(expectedOutput, actualOutput);
     }
     
     @Test
-    @DisplayName("BusRoute.main uses augmented division operator")
+    @DisplayName("BusRoute.main uses /= once")
     public void mainDivOpTest() {
-    	String contents = TestUtility.getClassAsString("BusRoute");
-		System.out.println(contents);
-		
-		Pattern pattern = Pattern.compile("passengers\\s+/=\\s+2");
-	    Matcher matcher = pattern.matcher(contents);
-	    int count = 0;
-	    while (matcher.find()) {
-	    	count++;
-	    }
-	    assertEquals(1, count);
+    	String pattern = "passengers\s*/=\s*2";
+    	int expectedCount = 1;
+    	int actualCount = JunitHelper.countOccurrences("BusRoute", "main", pattern);
+    	assertEquals(expectedCount, actualCount);
     }
     
     @Test
-    @DisplayName("BusRoute.main uses augmented multiplication operator")
+    @DisplayName("BusRoute.main uses *= once")
     public void mainMultOpTest() {
-    	String contents = TestUtility.getClassAsString("BusRoute");
-		System.out.println(contents);
-		
-		Pattern pattern = Pattern.compile("passengers\\s+\\*=\\s+3");
-	    Matcher matcher = pattern.matcher(contents);
-	    int count = 0;
-	    while (matcher.find()) {
-	    	count++;
-	    }
-	    assertEquals(1, count);
+    	String pattern = "passengers\s*\\*=\s*3";
+    	int expectedCount = 1;
+    	int actualCount = JunitHelper.countOccurrences("BusRoute", "main", pattern);
+    	assertEquals(expectedCount, actualCount);
     }
-
+    
 }
 

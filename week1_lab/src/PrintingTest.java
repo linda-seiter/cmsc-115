@@ -8,12 +8,12 @@ public class PrintingTest {
     @Test
     @DisplayName("Printing.main prints correct output")
     public void mainIOTest() {
-        String expected = "red \n"
+        String expectedOutput = "red \n"
         		+ "green blue \n"
         		+ "pink \n"
         		+ "yellow";
-        String actual = TestUtility.getOutput("Printing", null);
-        assertEquals(expected, actual);
+        String actualOutput = JunitHelper.mainOutput("Printing");
+        assertEquals(expectedOutput, actualOutput);
     }
 
 }

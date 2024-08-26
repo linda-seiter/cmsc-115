@@ -8,9 +8,9 @@ public class MathematicalExpressionTest {
     @Test
     @DisplayName("MathematicalExpression.main prints correct output")
     public void mainIOTest() {
-        String expected = "(2 + 3) * 8 = 40";
-        String actual = TestUtility.getOutput("MathematicalExpression", null);
-        assertEquals(expected, actual);
+        String expectedOutput = "(2 + 3) * 8 = 40";
+        String actualOutput = JunitHelper.mainOutput("MathematicalExpression");
+        assertEquals(expectedOutput, actualOutput);
     }
 
 }

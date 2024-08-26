@@ -3,47 +3,32 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class DebugItTest {
 
     @Test
     @DisplayName("DebugIt.main prints correct output")
     public void mainIOTest() {
-        String expected = "Planes on runway = 4";
-        String actual = TestUtility.getOutput("DebugIt", null);
-        assertEquals(expected, actual);
+    	String expectedOutput = "Planes on runway = 4";
+        String actualOutput = JunitHelper.mainOutput("DebugIt");
+        assertEquals(expectedOutput, actualOutput);
     }
     
     @Test
-    @DisplayName("DebugIt.main uses augmented addition operator twice")
-    public void mainAddOpTest() {
-    	String contents = TestUtility.getClassAsString("DebugIt");
-		System.out.println(contents);
-		
-		Pattern pattern = Pattern.compile("\\+=");
-	    Matcher matcher = pattern.matcher(contents);
-	    int count = 0;
-	    while (matcher.find()) {
-	    	count++;
-	    }
-	    assertEquals(1, count);
+    @DisplayName("DebugIt.main uses += once")
+    public void plusEqualOperator() {
+    	String pattern = "\\+=";
+    	int expectedCount = 1;
+    	int actualCount = JunitHelper.countOccurrences("DebugIt", "main", pattern);
+    	assertEquals(expectedCount, actualCount);
     }
     
     @Test
-    @DisplayName("DebugIt.main uses augmented subtraction operator twice")
-    public void mainSubOpTest() {
-    	String contents = TestUtility.getClassAsString("DebugIt");
-		System.out.println(contents);
-		
-		Pattern pattern = Pattern.compile("\\-=");
-	    Matcher matcher = pattern.matcher(contents);
-	    int count = 0;
-	    while (matcher.find()) {
-	    	count++;
-	    }
-	    assertEquals(1, count);
+    @DisplayName("DebugIt.main uses -= once")
+    public void minusEqualOperator() {
+    	String pattern = "-=";
+    	int expectedCount = 1;
+    	int actualCount = JunitHelper.countOccurrences("DebugIt", "main", pattern);
+    	assertEquals(expectedCount, actualCount);
     }
 
 }

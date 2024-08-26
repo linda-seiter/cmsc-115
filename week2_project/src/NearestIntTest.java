@@ -16,7 +16,7 @@ public class NearestIntTest {
         		+ "Rounded to nearest int: 5\n"
         		+ "Negative Value: -4.75\n"
         		+ "Negative Value rounded to nearest int: -5";
-        String actual = TestUtility.getOutput("NearestInt", input);
+        String actual = JunitHelper.mainInputOutput("NearestInt", input);
         assertEquals(expected, actual);
     }
     
@@ -32,7 +32,7 @@ public class NearestIntTest {
         		+ "Rounded to nearest int: 1\n"
         		+ "Negative Value: -1.375\n"
         		+ "Negative Value rounded to nearest int: -1";
-        String actual = TestUtility.getOutput("NearestInt", input);
+        String actual = JunitHelper.mainInputOutput("NearestInt", input);
         assertEquals(expected, actual);
     }
     
@@ -47,7 +47,7 @@ public class NearestIntTest {
         		+ "Rounded to nearest int: 1\n"
         		+ "Negative Value: -0.7\n"
         		+ "Negative Value rounded to nearest int: -1";
-        String actual = TestUtility.getOutput("NearestInt", input);
+        String actual = JunitHelper.mainInputOutput("NearestInt", input);
         assertEquals(expected, actual);
     }
     

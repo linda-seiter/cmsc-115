@@ -8,11 +8,11 @@ public class CommentsTest {
     @Test
     @DisplayName("Comments.main prints correct output")
     public void mainIOTest() {
-        String expected = "apple\n"
+    	String expectedOutput = "apple\n"
         		+ "pear\n"
         		+ "watermelon"; 
-        String actual = TestUtility.getOutput("Comments", null);
-        assertEquals(expected, actual);
+        String actualOutput = JunitHelper.mainOutput("Comments");
+        assertEquals(expectedOutput, actualOutput);
     }
 
 }

@@ -24,7 +24,7 @@ public class PizzaShares {
 		System.out.println("Each person gets " + slicesPerPerson + " slices.");
 		
 		//TODO: Compute and print number of slices remaining
-		
+				
 	}
 
 }

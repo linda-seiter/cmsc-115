@@ -13,7 +13,7 @@ public class TransmissionRateTest {
 	
 	@BeforeAll
 	public static void getClassContents() {
-		classContents = TestUtility.getClassAsString("TransmissionRate");
+		classContents = JunitHelper.getClassAsString("TransmissionRate");
 	}
 
     @Test
@@ -22,7 +22,7 @@ public class TransmissionRateTest {
     	String input = "2";
         String expected = "Enter r0: "
         		+ "New cases on 4th iteration: 16";
-        String actual = TestUtility.getOutput("TransmissionRate", input);
+        String actual = JunitHelper.mainInputOutput("TransmissionRate", input);
         assertEquals(expected, actual);
     }
     
@@ -32,7 +32,7 @@ public class TransmissionRateTest {
     	String input = "10";
         String expected = "Enter r0: "
         		+ "New cases on 4th iteration: 10000";
-        String actual = TestUtility.getOutput("TransmissionRate", input);
+        String actual = JunitHelper.mainInputOutput("TransmissionRate", input);
         assertEquals(expected, actual);
     }
    
@@ -43,33 +43,26 @@ public class TransmissionRateTest {
     	String input = "18";
         String expected = "Enter r0: "
         		+ "New cases on 4th iteration: 104976";
-        String actual = TestUtility.getOutput("TransmissionRate", input);
+        String actual = JunitHelper.mainInputOutput("TransmissionRate", input);
         assertEquals(expected, actual);
     }
     
-    
     @Test
     @DisplayName("TransmissionRate.main calls Math.pow")
-    public void mathpow() {
-    	Pattern pattern = Pattern.compile("Math[.]pow\\(.*?\\)");
-	    Matcher matcher = pattern.matcher(classContents);
-	    int count = 0;
-	    while (matcher.find()) {
-	    	count++;
-	    }
-	    assertEquals(1, count);
+    public void powerFunctionCalled() {
+    	String pattern = "Math[.]pow\\(.*?\\)";
+    	int expectedCount = 1;
+    	int actualCount = JunitHelper.countOccurrences("TransmissionRate", "main", pattern);
+    	assertEquals(expectedCount, actualCount);
     }
     
     @Test
-    @DisplayName("TransmissionRate int cast")
-    public void intcast() {
-    	Pattern pattern = Pattern.compile("\\(int\\)");
-	    Matcher matcher = pattern.matcher(classContents);
-	    int count = 0;
-	    while (matcher.find()) {
-	    	count++;
-	    }
-	    assertEquals(1, count);
+    @DisplayName("TransmissionRate.main int cast")
+    public void intCast() {
+    	String pattern = "\\(int\\)";
+    	int expectedCount = 1;
+    	int actualCount = JunitHelper.countOccurrences("TransmissionRate", "main", pattern);
+    	assertEquals(expectedCount, actualCount);
     }
     
 }
