@@ -13,9 +13,9 @@ public class BillSplitterTest {
 	}
 	
 	@Test
-    @DisplayName("BillSplitter.main formula contains multiplication, addition, then division")
+    @DisplayName("BillSplitter.main formula contains addition, multiplication, then division")
     public void formulaOperatorTest() {
-    	String pattern = "\\*.*\\+.*/";
+    	String pattern = "\\+.*\\*.*/";
     	int expectedCount = 1;
     	int actualCount = JunitHelper.countOccurrences("BillSplitter", "main", pattern);
     	assertEquals(expectedCount, actualCount);

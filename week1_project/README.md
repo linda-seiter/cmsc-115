@@ -17,32 +17,27 @@ TODO: ...
 
 ## Task 1 - Poem.java
 
-Double click on `Poem.java` in the Package Explorer to open the file in the editor. 
+- Create a new class named `Poem`.
+In the Project Explorer, right-click on `week1_project>src>(default package)` and then select `New > Class` from the popup menu. 
+
+- Confirm the source folder `week1_project/src` and default package. Enter the class name `Poem` and check the box to generate a `main` method.   Press "Finish" to create the class.
+	
+<img src="images/new_poem_class.png" alt="new class named Poem" width=300>
+
+- Add a JavaDoc comment with your name before the class header.
 
 ```java
 /**
  * Poem class demonstrates printing text to the console.
  * @author First Last
  */
-public class Poem {
 
-	public static void main(String[] args) {
-		//TODO: Add print statements to produce a poem.  Experiment with adding extra white space.
-
-	}
-
-}
 ```
 
-1. Update the JavaDoc comment with your name.
-2. Edit the `main` method to add statements to generate a poem. The program should produce at least 10 lines of output.  Feel free to create your own poem or use one by an existing poet.  Please include the poem title and author.  Experiment with adding extra white space in between or within the lines of the poem. 
-3. Run `Poem` to view the output.
-4. Run `PoemTest` to confirm your solution passes the Junit test. The test is designed to count the number of lines of output.
-
-A sample children's poem that uses white space:
+- Edit the `main` method to generate a poem with at least 10 lines of output. You may create your own poem or use an existing one.  Include a  title and author.  Experiment with adding extra white space in between or within the lines of the poem. A sample children's poem that uses white space is shown below.
 
 ```text
-    I Like Stars
+    I LIKE STARS
 
            Blue stars,
         Red stars,
@@ -61,36 +56,41 @@ How about you?
         PAMELA JOHNSON
 ```
 
+- Run `PoemTest` to confirm your solution passes the Junit test. The test is designed to count the number of lines of output.
+
+
+
 ## Task 2 - BillSplitter.java
 
+Assume 2 people are splitting a restaurant bill for $94.20. Service was good so add a 20% tip.
 
-Edit `BillSplitter.java` to calculate and print each person's share of a restaurant bill.
 
-Assume the bill before tip is $94.20. Service was good so add a 20% tip. Split the bill plus tip by 2 people and print the per person amount as a double (i.e. leave out the dollar sign).
 
-Write a single statement that calculates and prints the per person share using the following formula:
+- Create a new class named `BillSplitter` in the `week1_project` default package.
 
-<math>
-  <mfrac>
-    <mtext>bill * 0.2 + bill</mtext>
-    <mtext>number of people</mtext>
-  </mfrac>
-</math>
+- Add a JavaDoc comment:
 
-Keep in mind the default order of operations, listed from highest to lowest:
+```text
+/**
+ * BillSplitter class demonstrates printing a math expression.
+ * @author First Last
+ */
+ ```
+
+- Edit the `main` method to add a single Java statement to **calculate and print** the per person share using the following formula:
+
+<img src="images/bill_split.png" width="200">
+
+- Run `BillSplitterTest` to confirm your solution passes the Junit tests.  The test looks for an expression with addition, multiplication, and division operators (in that order).
+
+
+If your code does not pass the test, recall operator precedence and the default order of operations:
 1. Parentheses
 2. Multiplication and Division
 3. Addition and Subtraction
 
-Run `BillSplitterTest` to confirm your solution passes the Junit tests.  NOTE: The test looks for a formula with operators in the following order: multiplication, addition, division.
-
-
-Save and close any open files.
-
 ## Submit Your Solution
 
 If there are any open files in the editor window, right-click on one of the tabs and select "Close All". You will be prompted if there are unsaved changes. **Save your changes before submitting.**
-
-![close all and save](images/close_all.png)
 
 TODO: Instructions on submitting

@@ -8,7 +8,8 @@ public class CourseWelcomeTest {
     @Test
     @DisplayName("CourseWelcome.main prints correct output")
     public void mainIOTest() {
-    	String expectedOutput = "Welcome to CMCS 115.\n" +
+    	String expectedOutput = 
+    			"Welcome to CMCS 115.\n" +
                 "Let's learn Java!";
         String actualOutput = JunitHelper.mainOutput("CourseWelcome");
         assertEquals(expectedOutput, actualOutput);
