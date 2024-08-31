@@ -1,11 +1,4 @@
-<style>
-table, th, td {
-  border: 1px solid black;
-  padding: 4px;
-  border-collapse: collapse;
-  
-  }
-</style>
+
 
 # CMSC 115 Week 1 Lab
 
@@ -419,3 +412,11 @@ If there are any open files in the editor window, right-click on one of the tabs
 
 TODO: Instructions on submitting
 
+<style>
+table, th, td {
+  border: 1px solid black;
+  padding: 4px;
+  border-collapse: collapse;
+  
+  }
+</style>
